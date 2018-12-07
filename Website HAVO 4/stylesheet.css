@@ -1,0 +1,134 @@
+/* CSS behorend bij Website Opdracht Erwin Maarleveld H4g  */
+
+body {
+margin : 0;
+padding : 0;
+}
+* {
+margin : 0;
+padding : 0;
+}
+.clear {
+clear : both;
+}
+p {
+padding : 10px 0 10px 20px;
+}
+
+/*  breedte van het informatieveld */
+#container {
+margin : 0 auto 0 auto;
+width : 1200px;
+}
+/* breedte menu kolom */
+.content-links {
+width : 260px;
+height : 730px;
+float : left;
+}
+
+/* breedte van de informatie kolom */
+.content-rechts {
+width : 1300px;
+height : 730px;
+padding-top : 100px;
+}
+
+/* de background  van de hele website */
+body {
+background-image : url("plaatjes/Panda-achtergrond.jpg");
+}
+
+/* de instellingen van het menu */
+#menu ul {
+margin : 0;
+padding : 10px;
+width : 185px;
+list-style-type : none;
+font-size : large;
+color : white;
+}
+#menu ul li a {
+text-decoration : none;
+font-size : medium;
+color : white;
+padding : 8px 12px;
+background-color : green;
+display : block;
+}
+/* als je op een menu klikt dan krijgt het een andere kleur */
+#menu ul li a:visited {
+color : white;
+}
+/* als je met je muis op het menu bent dan wordt het menu item anders van kleur */
+#menu ul li a:hover, .menu_simple ul li .current {
+color : white;
+background-color : #5FD367;
+}
+
+/* dit is het informatie vlak */
+#Informatie {
+font-family : Verdana, Arial;
+font-size : 16px;
+text-align : left;
+height : 800px;
+width : 1400px;
+color : black;
+border : #8AD94F solid 0;
+}
+#footer {
+height : 140px;
+width : 1280px;
+text-align : center;
+padding : 10px 0 10px 20px;
+}
+
+/* dit zijn de instellingen van de vergroting van de plaatjes als je er overheen hoovert met je muis */
+ul.enlarge {
+list-style-type : none;
+margin-left : 0;
+}
+ul.enlarge li {
+display : inline-block;
+position : relative;
+z-index : 0;
+margin : 10px 40px 0 20px;
+}
+ul.enlarge img {
+background-color : #eae9d4;
+padding : 6px;
+box-shadow : 0 0 6px rgba(132, 132, 132, 0.75);
+border-radius : 4px;
+}
+ul.enlarge span {
+position : absolute;
+left : -9999px;
+background-color : #eae9d4;
+padding : 10px;
+font-family : 'Droid Sans', sans-serif;
+font-size : 0.9em;
+text-align : center;
+color : #495a62;
+box-shadow : 0 0 20px rgba(0, 0, 0, 0.75);
+border-radius : 8px;
+}
+ul.enlarge li:hover {
+z-index : 50;
+cursor : pointer;
+}
+ul.enlarge span img {
+padding : 2px;
+background : #ccc;
+}
+
+/* hier stel je in waar het vergrote plaatje komt */
+ul.enlarge li:hover span {
+top : -300px;
+left : 0;
+}
+ul.enlarge li:hover:nth-child(2) span {
+left : -100px;
+}
+ul.enlarge li:hover:nth-child(3) span {
+left : -200px;
+}

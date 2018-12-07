@@ -1,0 +1,681 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!-- Opdracht Erwin Maarleveld H4g           -->
+<!-- 6 jan 2015                        -->
+<!-- Versie 1.15							 -->
+<!-- css play.co.uk -->                        
+
+<html lang="nl">
+<font face= "Arial, Verdana, Courier, Times New Roman">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+    	<link href="stylesheet.css" rel="stylesheet" type="text/css" />
+							
+		<title>Erwin's Website</title>
+		
+		<script>
+				
+<!--functions for showing and hiding menu items-->
+
+		function show(divId){
+
+		<!-- wis alles en toon het gevraagde menu item -->
+
+		var theDiv = document.getElementById(divId);
+		wis();
+		theDiv.style.display="";
+		}
+		
+		function wis(){
+		
+		<!-- wis alle menu items die er zijn -->
+
+		Wiebenik.style.display="none";
+		School.style.display="none";
+		Reizen.style.display="none";
+		Minecraft.style.display="none";
+		Hockey.style.display="none";
+		LeagueofLegends.style.display="none";
+		Tennis.style.display="none";
+		Bowlen.style.display="none";
+		Muziek.style.display="none";
+		Series.style.display="none";
+		Films.style.display="none";
+		Youtube.style.display="none";
+		}
+
+		</script>
+  	</head>
+	
+<body>
+	
+<!-- Container met 2 kolommen: kolom 1 voor het verticale menu, kolom 2 voor de inhoud -->
+<!-- eigenschappen van de kolommen staan in de css                                     -->
+
+
+<div id="container">
+
+<!-- Dit is de linker kolom: het verticale menu -->
+
+ <div class="content-links">
+ 
+ <!-- de HOME knop: animated GIF				-->
+	<a href="index.html"><img src="plaatjes/panda_animated_eat_slow.gif"
+		alt="Terug naar Home"
+		width="125" height="175" border="0" /></a>	
+				
+	<div id="menu">
+		<ul>
+			<li>Over mij</li>
+			<ul>
+				<li><a href='#' onclick="show('Wiebenik'); 	return false;">Wie ben ik?</a></li>
+				<li><a href='#' onclick="show('School');	return false;">School</a></li>
+				<li><a href='#' onclick="show('Reizen'); 	return false;">Reizen</a></li>
+			</ul>
+						 
+			<li>Hobbies</li>
+				<ul>
+					<li><a href='#' onclick="show('Minecraft'); 		return false;">Minecraft</a></li>
+					<li><a href='#' onclick="show('LeagueofLegends'); 	return false;">League of Legends</a></li>
+					<li><a href='#' onclick="show('Hockey'); 			return false;">Hockey</a></li>
+					<li><a href='#' onclick="show('Tennis'); 			return false;">Tennis</a></li>
+					<li><a href='#' onclick="show('Bowlen'); 			return false;">Bowlen</a></li>
+					<li><a href='#' onclick="show('Muziek'); 			return false;">Muziek</a></li>
+				</ul>
+							
+			<li>Internet en TV</li>
+				<ul>
+					<li><a href='#' onclick="show('Series'); 	return false;">Series</a></li>
+					<li><a href='#' onclick="show('Films'); 	return false;">Films</a></li>
+					<li><a href='#' onclick="show('Youtube'); 	return false;">YouTube</a></li>
+				</ul>
+		</ul>
+	</div>
+
+ 
+ </div>
+ 
+ <!-- Dit is de rechter kolom: de inhoud van de menu items -->
+ 
+ <div class="content-rechts">
+
+  	<div id='Informatie' style=""> 
+	
+<!--menu item: Wie ben ik?-->
+
+		<div id="Wiebenik" style="display:none">
+		<h4 style="color:white">Wie ben ik?</h4>
+		<p>
+		<table style="text-align:left; width: 750px;"  background="Old-Paper-Background.jpg">
+			<tr>
+				<td style="vertical-align:top;">
+					<p>
+					Hallo ik ben Erwin en dit is mijn website<p>
+					Ik ben 16 jaar en woon in Delft. 
+					Ik zit in 4 Havo op het CLD. <br>
+					Zoals je op deze website kunt zien hou ik van computer games, sport, series en films.
+					<p>
+					<IMG src="plaatjes/fotowiebenik.jpg" width="200">	
+					<p>							
+					Eigenlijk wil ik helemaal niet dat deze website op het internet zichtbaar is, want het gaat niemand iets aan.
+					</p>					
+				</td>
+			</tr>
+		</table>
+		</div>
+		
+<!--menu item: School-->
+
+		<div id="School" style="display:none">
+		<h4 style="color:white">School</h4>
+		<p>
+		<table style="text-align:left; vertical-align: bottom; width: 750px;" background="Old-Paper-Background.jpg">
+			<tr>
+				<td style="vertical-align:top">
+					<p>
+					Ik zit in H4g van het CLD en heb gekozen voor NT als profiel. <br><br>
+					Volgend jaar wil ik eindexamen doen en daarna ga ik informatica studeren. 
+					Dat lijkt me helemaal te gek. Ik heb mijn stage vorig jaar bij een klein ICT bedrijf gedaan en dat was ook heel leuk. <br><br>
+					Ik ben nu aan het uitzoeken waar ik informatica wil gaan doen.
+					Ik ben al gaan kijken in Leiden en ik hoop dat er binnenkort ook open dagen zijn op de Haagse Hoge school.
+					<p> 
+					<IMG src="plaatjes/school.jpg" width="50%">
+					<p>
+					Ik vind het leuk om deze opdracht te doen omdat ik hiermee ook websites kan maken voor Minecraft en League of Legends. <p>
+					Tot nu toe heb ik alleen filmpjes geplaatst op Youtube, maar een website lijkt me ook wel gaaf. 						
+				</td>
+			</tr>
+		</table>
+		</div>
+		
+<!--menu item Reizen-->
+
+		<div id="Reizen" style="display:none">
+		<h4 style="color:white">Reizen</h4>
+		<p>
+		<table style="text-align:left; width: 750px;"  background="Old-Paper-Background.jpg">
+		<tr>
+		<td style="vertical-align:top;">
+			<p>
+			Ik ben op vakantie op hele bijzondere plekken geweest. Sommige laat ik hier onder zien.
+			<!-- tabel van 3 rijen en 2 kolommen -->
+			<table style="text-align:left; width: 750px;">
+				<tr>
+					<td width=500>
+						<p><b>Zweden</b><br><br>
+						We zijn op trektocht door Zweden gevaren met kano's en een kayak. <br>
+						Dit was een echte survival tocht: je eigen tent mee en ergens in de natuur een plekje vinden om te overnachten.<br>
+						Onderweg een supermarkt plunderen als die er tenminste was.
+						Ook moesten we met de kano over het land. Hiervoor deden we wieltjes onder de kano.
+					</td>
+					<td>
+						<p><p>
+						<IMG src="plaatjes/kano.jpg" width="200">
+						<p>
+					</td>
+				</tr>
+				<tr>
+					<td width=500>
+						<p><b>Egypte</b> <br><br>
+						Dit was een heerlijke strandvakantie. Het is leuk om te snorkelen. <br>
+						Ook was het leuk om in een Engelse pub te kijken naar Nederland - Engeland. Gelukkig wonnen we nog net met 3-2!
+					</td>
+					<td>
+						<p><p>
+						<IMG src="plaatjes/Paradise5.jpg" width="200">
+						<p>
+					</td>
+				</tr>
+				<tr>
+					<td width=500>
+						<p><b>India</b><br><br>
+						Drie weken op de bonnefooi door India. Dat is wel het meest bijzondere wat ik op vakantie heb gedaan.<br>
+						Kaarsjes op de Ganges laten drijven in Varanasi, met nachttreinen dwars door India, marktjes bezoeken. <br>
+						Met een jeep een safaripark in en daar zelfs een tijger gezien!
+						<p>
+					</td>
+					<td>
+						<p><p>
+						<IMG src="plaatjes/tiger.jpg" width="200">
+						<p>
+					</td>
+				</tr>
+			</table>
+		</td>
+		</tr>
+		</table>
+		</div>
+
+<!--menu item: Minecraft -->
+
+		<div id="Minecraft" style="display:none">
+		<h4 style="color:white">Minecraft</h4>
+		<p>
+				
+		<table style="text-align:left; width: 940px; height: 620px;"  background="Old-Paper-Background.jpg">
+		<tr>	
+		<td style="vertical-align:top;">
+			<p>
+			Ik speel graag Minecraft. Minecraft is een spel waarin je je eigen wereld kan maken. Je kan het spelen met gewoon de spullen die je in Vanilla (gewoon) Minecraft hebt of je kan het spelen met mods.<br><br>
+			In rij 1 zijn wat foto's van mijn bouwwerken.<br>
+			In rij 2 staan foto's van bouwwerken waaraan ik heb gewerkt met een crew (we gingen de map van Game of Thrones nabouwen).<br>
+			In rij 3 staan foto's van anderen die ik heel mooi vind.
+			<table style="text-align:left; width: 300px">
+			<tr>
+				<td style="text-align:center">
+					<IMG src="plaatjes/nummer-1.png"; width="30px"; style="vertical-align:top">
+				</td>
+				<td style="text-align:center">
+					<IMG src="plaatjes/nummer-2.png"; width="40px"; style="vertical-align:bottom">
+				</td>
+				<td style="text-align:center">
+					<IMG src="plaatjes/nummer-3.png"; width="40px"; style="vertical-align:top">
+				</td>
+			</tr>
+			<tr>
+				<td style="vertical-align:top;">
+					<ul class="enlarge">
+					<li><img src="plaatjes/erebor.png" height="100px" alt="Erebor" /><span><img src="plaatjes/erebor.png" alt="Erebor" /><br />Erebor</span></li><br>
+					<li><img src="plaatjes/spawn minecraft.jpg" width="150px" height="100px" alt="Minecraft spawn" /><span><img src="plaatjes/spawn minecraft.jpg" alt="Minecraft spawn" /><br />Minecraft spawn</span></li><br>
+					<li><img src="plaatjes/tirith.jpg" width="150px" height="100px" alt="Minias Tirith" /><span><img src="plaatjes/tirith.jpg" alt="Minias Tirith" /><br />Minias Tirith</span></li>
+					</ul>							
+				</td>
+				<td style="vertical-align:top;">
+					<ul class="enlarge">
+					<li><img src="plaatjes/landing.jpg" width="150px" height="100px" alt="Kings Landing" /><span><img src="plaatjes/landing.jpg" alt="Kings Landing" /><br />Kings Landing</span></li><br>
+					<li><img src="plaatjes/pyke.jpg" width="150px" height="100px" alt="Pyke" /><span><img src="plaatjes/pyke.jpg" alt="Pyke" /><br />Pyke</span></li><br>
+					<li><img src="plaatjes/the wall.jpg" width="150px" height="100px" alt="The Wall" /><span><img src="plaatjes/the wall.jpg" alt="The Wall" /><br />The Wall</span></li>
+					</ul>
+				</td>
+				<td style="vertical-align:top;">
+					<ul class="enlarge">
+					<li><img src="plaatjes/minehuis.jpg" width="150px" height="100px" alt="Minecraft Waterhuis" /><span><img src="plaatjes/minehuis.jpg" alt="Minecraft Waterhuis" /><br />Minecraft Waterhuis</span></li><br>
+					<li><img src="plaatjes/chinhuis.jpg" width="150px" height="100px" alt="Chinees huis" /><span><img src="plaatjes/chinhuis.jpg" alt="Chinees huis" /><br />Chinees huis</span></li><br>
+					<li><img src="plaatjes/edoras.jpg" width="150px" height="100px" alt="Edoras" /><span><img src="plaatjes/edoras.jpg" alt="Edoras" /><br />Edoras</span></li>
+					</ul>
+				</td>
+			</tr>
+			</table>
+		</td>
+		</tr>
+		</table>
+		</div>
+
+
+<!--menu item League of Legends-->
+
+		<div id="LeagueofLegends" style="display:none">
+		<h4 style="color:white">League of Legends</h4>
+		<p>
+		<table style="text-align:left; width: 300px"  background="Old-Paper-Background.jpg">
+		<tr>
+		<td style="vertical-align:top;">
+			<p>
+			Ik speel league of Legends. 
+			<p>
+			Dit is een spel waarbij je speelt met een champion die bepaalde technieken heeft om de vijand te verslaan.
+			<p>
+			Dit zijn mijn favoriete champions. Je ziet hier de gewone skin, een instructiefilmpje en de skins die ik heb:
+			<p>
+<!-- tabel van 3 breed en 3 hoog -->
+
+			<table style="text-align:left; width: 300px;">
+<!-- rij 1: Ashe-->
+				<tr>
+					<td>
+						<img src="plaatjes/AsheOriginalSkin.jpg" height="175px" width="300">
+					</td>
+					<td>
+						<iframe width="300" height="169" src="http://www.youtube.com/embed/K_zYQHqa3oQ" frameborder="0" allowfullscreen></iframe>
+					</td>
+					<td>
+						<img src="plaatjes/AsheFavouriteSkin.jpg" height="175px" width="300">
+					</td>
+				</tr>
+	<!-- rij 2: Teemo -->
+				<tr>
+					<td>
+						<img src="plaatjes/TeemoOriginalSkin.jpg" height="175px" width="300">
+					</td>
+					<td>
+						<iframe width="300" height="169" src="http://www.youtube.com/embed/Qj48qHM1MXE" frameborder="0" allowfullscreen></iframe>
+					</td>
+					<td>
+						<img src="plaatjes/TeemoFavouriteSkin.jpg" height="175px" width="300">
+					</td>
+				</tr>
+	<!-- rij 3: Gnar-->
+				<tr>
+					<td>
+						<img src="plaatjes/GnarOriginalSkin.jpg" height="175px" width="300">
+					</td>
+					<td>
+						<iframe width="300" height="169" src="http://www.youtube.com/embed/4Qu3rhWGq0s" frameborder="0" allowfullscreen></iframe>
+					</td>
+					<td>
+						<img src="plaatjes/GnarFavouriteSkin.jpg" height="175px" width="300">
+					</td>
+				</tr>
+<!-- eind van de tabel -->
+			</table>
+		</td>
+		</tr>
+		</table>
+		</div>
+
+<!--menu item: Hockey-->
+
+		<div id="Hockey" style="display:none">
+		<h4 style="color:white">Hockey</h4>
+		<p>
+		<table style="text-align:left; width: 300px;"  background="Old-Paper-Background.jpg">
+		<tr>
+		<td style="vertical-align:top;">
+			<p>
+			Ik speel hockey bij Ring Pass in Delft: 
+			<p> 
+			<p>
+<!-- tabel van 3 breed en 2 hoog -->
+
+			<table style="text-align:left; width: 300px;">
+<!-- rij 1 -->
+				<tr>
+					<td>
+						<img src="https://lh5.googleusercontent.com/-gARCxZqwLT8/VCGrU526x3I/AAAAAAAAAUE/M_aYck0lXY4/w973-h730-no/RingPass%2BJA3%2Bteamfoto%2Bmet.jpg" width="300" height="200px">
+					</td>
+					<td>
+						<img src="https://lh3.googleusercontent.com/-M5oA9PSN6k0/VHDw4i4K2tI/AAAAAAAABB8/zdzRsx9DRr8/w973-h730-no/P1080983.JPG" width="300" height="200px">
+					</td>
+					<td>
+						<img src="https://lh6.googleusercontent.com/-CsvGXTUS6dY/VCGRNw1xFCI/AAAAAAAAAUU/iG-cbBwBR8U/w973-h730-no/_P1070977.JPG" width="300" height="200px">
+					</td>
+				</tr>
+<!-- rij 2 -->
+				<tr>
+					<td>
+						<iframe width="300" height="200" src="http://www.youtube.com/embed/YK0TTjP6jWA" frameborder="0" allowfullscreen></iframe>
+					</td>
+					<td>
+						<iframe width="300" height="200" src="http://www.youtube.com/embed/2QxzG2xOa7Y" frameborder="0" allowfullscreen></iframe>
+					</td>
+					<td>
+						<iframe width="300" height="200" src="http://www.youtube.com/embed/fr6Wu6uMAzk" frameborder="0" allowfullscreen></iframe>
+					</td>
+				</tr>
+			</table>
+		</td>
+		</tr>
+		</table>
+		</div>
+						
+<!--menu item Tennis-->
+
+		<div id="Tennis" style="display:none">
+		<h4 style="color:white">Tennis</h4>
+		<p>
+		<table style="text-align:left; width: 750px;"  background="Old-Paper-Background.jpg">
+		<tr>
+		<td style="vertical-align:top;">
+			<p>
+			Ik heb drie jaar op tennis gezeten bij Tennisvereniging Tanthof.
+			<p>
+			<!-- tabel van 1 rij en 2 kolommen -->						
+			<table style="text-align:left; width: 750px;">
+			<tr>
+				<td>
+					Ik heb ook competitie gespeeld en dat ging best goed. <br>
+					Dit jaar ben ik ermee gestopt, want het werd te druk met hockey en school. <br><br>
+					Ik vind het nog steeds leuk om te tennissen en tijdens vakanties doe ik het ook nog wel eens.
+					<p>
+				</td>
+				<td>
+					<p>
+					<IMG src="plaatjes/tennis.jpg" width="200">
+					<p>
+				</td>
+			</tr>
+			</table>
+		</td>
+		</tr>
+		</table>
+		</div>
+			
+<!--menu item Bowlen-->
+
+		<div id="Bowlen" style="display:none">
+		<h4 style="color:white">Bowlen</h4>
+		<p>
+		<table style="text-align:left; width: 750px;"  background="Old-Paper-Background.jpg">
+		<tr>
+		<td style="vertical-align:top;">
+			<p>
+			Ik heb op de basisschool twee keer samen met mijn groepje de voorronden gewonnen in Delft. 
+			Daarom mochten we beide keren naar het Nederlands kampioenschap bowlen.
+			<!-- tabel van 1 rij en 2 kolommen -->						
+			<table style="text-align:left; width: 750px;">
+			<tr>
+				<td width=500>
+					De voorronde werd gespeeld in het Karrewiel. 
+					We moesten tegen de andere scholen in Delft.
+					Onze school deed het erg goed, want wij hadden getraind voor deze voorronde. <br><br>
+					In 2007 werd de finale gespeeld bij Chandra Bowling in Schiedam.
+					In 2008 moesten we heel ver weg, ergens in Noord-Holland. <br><br>
+					We kwamen niet dichtbij de overwinning, maar het was wel heel spannend om mee te maken.
+					<p>
+				</td>
+				<td>
+					<p>
+					<IMG src="plaatjes/bowlen.jpg" width="200">
+					<p>
+				</td>
+			</tr>
+			</table>
+		</td>
+		</tr>
+		</table>
+		</div>
+			
+<!--menu item Muziek-->
+
+		<div id="Muziek" style="display:none">
+		<h4 style="color:white">Muziek</h4>
+		<p>
+		<table style="text-align:left; width: 750px;"  background="Old-Paper-Background.jpg">
+		<tr>
+			<td style="vertical-align:top;">
+				<p>
+				Ik heb op keyboard les gezeten en dat kan ik best goed. <br>
+				Ik vind het ook leuk om naar muziek te luisteren.
+				<p> 
+			</td>
+			<td>
+				<p>
+				<IMG src="plaatjes/yamaha.jpg" width="200">
+				<p>
+			</td>
+		</tr>
+		<tr>
+			<td width=500>
+				<p>
+				Ik luister vaak naar Chillstep. Dit is een muziek categorie. <br>
+				Het is rustige muziek maar wel met een goede bas.
+				Ik luister dit vaak als ik huiswerk aan het maken ben.
+				<p>
+			</td>
+			<td>
+				<p>
+				<IMG src="plaatjes/chillstepgroot.png" width="200">
+				<p>
+			</td>
+		</tr>
+		<tr>
+			<td width=500>
+				<p>
+				Electrohouse is ook leuk om naar te luisteren.
+				Hier luister ik vaak naar tijdens het gamen.
+				<p>
+			</td>
+			<td>
+				<p>
+				<IMG src="plaatjes/ilovehousemusic.jpg" width="200">
+				<p>
+			</td>
+		</tr>
+		</table>
+		</div>
+			
+			
+<!--menu item Series-->
+
+		<div id="Series" style="display:none">
+		<h4 style="color:white">Series</h4>
+		<p>
+		<table style="text-align:left; width: 750px;"  background="Old-Paper-Background.jpg">
+		<tr>
+		<td style="vertical-align:top;">
+			<p>
+			Er zijn heel veel leuke series te zien:
+			<!-- tabel van 3 rijen en 2 kolommen -->
+			<table style="text-align:left; width: 750px;">
+				<tr>
+					<td width=500>
+						<p><b>Game of Thrones</b><p>
+						Deze serie geeft een goed beeld over hoe de Middeleeuwen in elkaar zitten. 
+						Er zijn allerlei koningen die elkaar bevechten en de meesten mensen worden niet oud.
+						Ook worden er allerlei politieke spelletjes gespeeld.
+						Gelukkig komt er een vijfde serie in 2015.
+						Bij HBO kun je de eerdere series bekijken.
+					</td>
+					<td>
+						<p><p><p>
+						<IMG src="plaatjes/gameofthrones.jpg" width="250">
+						<p>
+					</td>
+				</tr>
+				<tr>
+					<td width=500>
+						<p><b>House of Cards</b><p>
+						Deze serie laat zien hoe je politieke spelletjes kunt spelen. 
+						Je kunt zelfs president van Amerika worden zonder een verkiezing te hebben gewonnen.
+						Daar hebben de spelers alles voor over, zelfs moord!
+					</td>
+					<td>
+						<p>
+						<IMG src="plaatjes/houseofcards.jpg" width="250">
+						<p>
+					</td>
+				</tr>
+				<tr>
+					<td width=500>
+						<p><b>Sherlock Holmes</b><p>
+						Dit is een leuke detective met een super intelligente Sherlock Holmes.
+						Hij heeft een eigen mind of vision, en ziet direct wat je hebt gegeten en met wie en of je de waarheid spreekt. <br>
+						Best handig!
+					</td>
+					<td>
+						<p>
+						<IMG src="plaatjes/sherlock.jpg" width="250">
+						<p>
+					</td>
+				</tr>
+			</table>
+		</td>
+		</tr>
+		</table>
+		</div>
+			
+<!--menu item Films-->
+
+		<div id="Films" style="display:none">
+		<h4 style="color:white">Films</h4>
+		<p>
+		<table style="text-align:left; width: 750px;"  background="Old-Paper-Background.jpg">
+		<tr>
+		<td style="vertical-align:top;">
+			<p>
+			Ik hou ook van films kijken en heb de volgende tips:
+			<!-- tabel van 3 rijen en 2 kolommen -->
+			<table style="text-align:left; width: 750px;">
+				<tr>
+					<td width=500>
+						<p><b>Colombiana</b><p>
+						Een verhaal over een jong meisje die als ze groot is de moord op haar ouders gaat wreken.
+						De film gaat erover hoe ze dit doet.
+					</td>
+					<td>
+						<p>
+						<IMG src="plaatjes/colombiana.jpg" width="250">
+						<p>
+					</td>
+				</tr>
+				<tr>
+					<td width=500>
+						<p><b>The Hobbit</b><p>
+						Een serie van drie Fantasy films die gaan over een hele lange reis naar een berg.
+						Daar moet eerst een draak worden verslagen en daarna kan het dwergenvolk hun land weer in bezit nemen.
+						Er is hulp nodig van tovernaars, elven, dwergen, mensen en een hobbit.
+					</td>
+					<td>
+						<p>
+						<IMG src="plaatjes/hobbit.jpg" width="250">
+						<p>
+					</td>
+				</tr>
+				<tr>
+					<td width=500>
+						<p><b>Transformers</b><p>
+						Een serie van vijf films die gaan over robots die de mensen gaan beschermen tegen andere robots. <br>
+						De goede robots moeten de wereld redden.
+					</td>
+					<td>
+						<p>
+						<IMG src="plaatjes/transformers.jpg" width="250">
+						<p>
+					</td>
+				</tr>
+			</table>
+		</td>
+		</tr>
+		</table>
+		</div>
+			
+<!--menu item Youtube-->
+
+		<div id="Youtube" style="display:none">
+		<h4 style="color:white">Youtube</h4>
+		<p>
+		<table style="text-align:left; width: 750px;"  background="Old-Paper-Background.jpg">
+		<tr>
+		<td style="vertical-align:top;">
+			<p>
+			Ik gebruik Youtube voor het neerzetten van filmpjes over Minecraft en League of Legends. Kijk maar eens naar onderstaande kanalen.
+			<!-- tabel van 3 rijen en 2 kolommen -->	
+			
+			<table style="text-align:left; width: 750px;">
+			<!-- EZR Games  -->
+			<tr>
+				<td width=500>
+					<p><b>EZRgames</b><p>
+					Bij EZRgames maken we game video's van bijvoorbeeld Minecraft en League of Legends. We hebben al een aantal films online staan en die worden bekeken.<p>
+					<a href="https://www.youtube.com/user/EZRgames">Ga naar EZRgames</a> 
+				</td>
+				<td>
+					<IMG src="plaatjes/EZRgames.jpg" width="200"> <p>
+				</td>
+			</tr>
+			<!-- No Namer Records -->
+			<tr>
+				<td width=500>
+					<p><b>NoNamerRecords</b><p>
+					Bij het plaatsen van video's moet er ook een muziekje op staan. 
+					Om geen problemen met copyright op de muziek te krijgen, heb ik een kanaal gemaakt waarop muziek te vinden is waarop geen copyright zit. 
+					We kunnen dus nu muziek van dit kanaal gebruiken voor onze video's. <p>
+					<a href="https://www.youtube.com/user/NoNamerRecords">Ga naar NoNamerRecords</a> 
+				</td>
+				<td>
+					<IMG src="plaatjes/NoNamerRecords.jpg" width="200"> <p>
+				</td>
+			</tr>
+			<!-- Filmpje over een boek -->
+			<tr>
+				<td width=500>
+					<p><b>Zwarte stad</b><p>
+					Ik heb voor school in 2 Havo een filmpje moeten maken over een boek. <br>
+					Dat heb ik ook gepubliceerd op Youtube <p>
+				</td>
+				<td>
+					<iframe width="300" height="169" src="http://www.youtube.com/embed/gb5VPObD5hs" frameborder="0" allowfullscreen></iframe>
+				</td>
+			</tr>
+			</table>
+		</td>
+		</tr>
+		</table>
+		</div>
+	</div>	
+
+<!--Footer met zoekboxje en W3C logo;   -->
+<!-- website is gechekt via w3c website http://jigsaw.w3.org/css-validator/  -->
+
+ <div class="footer">
+	<table style="width:100%; padding: 10px 0px 10px 5px; background-color:green; color:white">
+		<tr>
+			<td width="40%">Ontwerp: Erwin Maarleveld (c) 2014</td>
+			<td width="30%">Contact: <a href="mailto:erwin@maarleveld.nl">erwin@maarleveld.nl</a></td> 
+			<td width="60%"><FORM METHOD="get" ACTION="http://www.google.nl/search" TARGET="_blank">
+								<INPUT TYPE="text" NAME="q" SIZE="35"> &nbsp; <INPUT TYPE="submit" NAME="btnG" VALUE="Zoeken in Google">
+							</FORM></td>
+			<td width="25%"<a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:68px;height:24px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valide CSS!" />
+    </a></td>
+		</tr>
+	</table>	
+ </div>
+ 
+<!-- einde 2 KOLOMMEN -->
+	
+</body>
+</html>
