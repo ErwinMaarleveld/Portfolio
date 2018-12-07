@@ -1,0 +1,14 @@
+
+
+technische aardigheidjes:
+- vertikaal menu, met DIVs
+- embedded filmpjes
+- automatische vergroting van plaatjes via Hoover
+- animated GIF als logo en Home knop
+- W3c getest
+- op server gehost en beschikbaar
+
+Ontwerp:
+- strak en warm ontwerp
+- eenvoudig te bedienen
+

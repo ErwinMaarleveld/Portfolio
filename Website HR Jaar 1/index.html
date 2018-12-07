@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!-- Opdracht Erwin Maarleveld H4g           -->
+<!-- 22 december  2014                        -->
+<!-- Versie 0.10							 -->
+<!-- css play.co.uk -->                        
+
+<html lang="nl">
+<font face= "Arial, Verdana, Courier, Times New Roman">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+    	<link href="stylesheet.css" rel="stylesheet" type="text/css" />
+							
+		<title>Erwin's Website</title>
+		
+		<script>
+				
+<!--functions for showing and hiding menu items-->
+
+		function show(divId){
+
+		<!-- wis alles en toon het gevraagde menu item -->
+
+		var theDiv = document.getElementById(divId);
+		wis();
+		theDiv.style.display="";
+		}
+		
+		function wis(){
+		
+		<!-- wis alle menu items die er zijn -->
+
+		Wiebenik.style.display="none";
+		Portfolio.style.display="none";
+		Montessori.style.display="none";
+		Rembrandt.style.display="none";
+		ChristelijkLyceumDelft.style.display="none";
+		HaagseHogeschool.style.display="none";
+		HogeschoolRotterdam.style.display="none";
+		Gamen.style.display="none";
+		FilmKijken.style.display="none";
+		Hockey.style.display="none";
+		}
+
+		</script>
+  	</head>
+	
+<body>
+<!-- <span style="cursor:pointer"> -->
+	
+<!-- Container met 2 kolommen: kolom 1 voor het verticale menu, kolom 2 voor de inhoud -->
+<div id="container">
+
+<!-- Dit is de linker kolom: de verticale menus -->
+
+ <div class="content-links">
+ 
+	<a href="index.html"><img src="plaatjes/HomeButton.png"
+		alt="Terug naar Home"
+		width="75" height="75" border="0" /></a>	
+				
+	<div id="menu">
+		<ul>
+			<li>Over mij</li>
+			<ul>
+				<li><a href='#' onclick="show('Portfolio');	return false;">Portfolio</a></li>
+				<li><a href='#' onclick="show('Wiebenik'); 	return false;">Wie ben ik?</a></li>
+			</ul>
+						 
+			<li>Scholen</li>
+				<ul>
+					<li><a href='#' onclick="show('Montessori'); 		return false;">Montessori</a></li>
+					<li><a href='#' onclick="show('Rembrandt'); 	return false;">Rembrandt</a></li>
+					<li><a href='#' onclick="show('ChristelijkLyceumDelft'); 			return false;">Christelijk Lyceum Delft</a></li>
+					<li><a href='#' onclick="show('HaagseHogeschool'); 			return false;">Haagse Hogeschool</a></li>
+					<li><a href='#' onclick="show('HogeschoolRotterdam'); 			return false;">Hogeschool Rotterdam</a></li>
+				</ul>
+							
+			<li>Hobbies</li>
+				<ul>
+					<li><a href='#' onclick="show('Gamen'); 	return false;">Gamen</a></li>
+					<li><a href='#' onclick="show('FilmKijken'); 	return false;">Film kijken</a></li>
+					<li><a href='#' onclick="show('Hockey'); 	return false;">Hockey</a></li>
+				</ul>
+		</ul>
+	</div>
+
+ 
+ </div>
+ 
+ <!-- Dit is de rechter kolom: de inhoud van de menu items -->
+ 
+ <div class="content-rechts">
+
+  	<div id='Informatie' style=""> 
+	
+<!--menu item: Wie ben ik?-->
+
+		<div id="Wiebenik" style="display:none">
+		<h4 style="color:white">Wie ben ik?</h4>
+		<p>
+		<table style="text-align:left; width: 750px;"  background="Old-Paper-Background.jpg">
+			<tr>
+				<td style="vertical-align:top;">
+					<p>
+					Ik ben Erwin Maarelveld, ik ben 19 jaar oud en woon in Delft.<br>
+					In dit portfolio vertel ik het een en ander over mijzelf. Dit is alleen bestemd voor deze opdracht en niet om te delen met anderen.
+					Ik bespreek hier de scholen waarop ik heb gezeten en ook mijn hobbies die ik heb in mijn vrije tijd.
+					<br><br>
+					<IMG src="plaatjes/FotoKreta.jpg" width="200">
+					<IMG src="plaatjes/fotoPortugal.jpg" width="450">
+					<p>
+					Ik zit nu op de Hogeschool Rotterdam omdat ik graag in de ICT een baan wil gaan zoeken. Ik kan me niet goed voorstellen dat ik ander werk zou moeten doen.
+				
+				</td>
+			</tr>
+		</table>
+		</div>
+		
+<!--menu item: Portfolio-->
+
+		<div id="Portfolio" style="display:none">
+		<h4 style="color:white">Portfolio</h4>
+		<p>
+		<table style="text-align:left; vertical-align: bottom; width: 750px;" background="Old-Paper-Background.jpg">
+			<tr>
+				<td style="vertical-align:top; font-color="black">
+					<p>
+					Deze website gaat over mijn portfolio. Er staat veel algemene informatie in, samen met mijn schoolverleden en hobbies.<br>
+					Dit portfolio is opgesteld omdat dit een opdracht van de Hogeschool Rotterdam is. Ik hou er niet van om informatie over mijzelf op het Internet te publiceren want dat gaat niemand iets aan. <br>
+					Als het cijfer voor dit portfolio binnen is dan zal deze website offline gehaald worden.<br>
+					<p> 
+					<IMG src="plaatjes/PortfolioTekst.png" width="50%">
+					<p>
+					De indeling van deze website is spreekt voor zich. Je kunt eerst lezen wie ik ben en daarna komt mijn schoolcarriere aan de orde. <br>
+					Daarna ga ik in op mijn hobbies.
+				</td>
+			</tr>
+		</table>
+		</div>
+		
+
+
+<!--menu item: Montessori -->
+
+		<div id="Montessori" style="display:none">
+		<h4 style="color:white">Montessori</h4>
+		<p>
+				
+		<table style="text-align:left; width: 940px; height: 620px;"  background="Old-Paper-Background.jpg">
+			<tr>	
+				<td style="vertical-align:top;">
+					<p>
+					<IMG src="plaatjes/MontesorischoolDelft.jpg" width="200">
+					<IMG src="plaatjes/MontesorischoolDelft2.jpg" width="200">
+					<IMG src="plaatjes/MontesorischoolDelft3.jpg" width="450"><br><br>
+					Ik ben op de Delftse Montessori school begonnen met knippen en plakken. <br>
+					Toen ik naar groep 4 ging bleek ik dyslectie te hebben, en dat lezen voor mij niet eenvoudig zou gaan worden.<br><br>
+					Bovendien was de school erg vrijblijvend: als je niet wilde werken, dan zou dat later wel komen. Dit schoot niet erg op. Als resultaat had ik in groep 6 een paar jaar taalachterstand. <br> 
+					Gelukkig kon ik terecht bij iemand die gespecialiseerd was in kinderen met dyslectie en bij haar heb ik lezen geleerd en ook Nederlandse spelling en grammatica.
+					<br>Mijn ouders waren wel klaar met de Montessorischool en dus werd ik overgeplaatst naar de Rembrandtschool.
+				</td>
+			</tr>
+		</table>
+		</div>
+
+
+<!--menu item Rembrandt-->
+
+		<div id="Rembrandt" style="display:none">
+		<h4 style="color:white">Rembrandt</h4>
+		<p>
+		<table style="text-align:left; width: 940px; height: 620px;"  background="Old-Paper-Background.jpg">
+			<tr>	
+				<td style="vertical-align:top;">
+					<p>
+					<IMG src="plaatjes/RembrandtschoolDelftLogo.jpg" width="100%"><br><br>
+					De Rembrandtschool was een ouderwetse school waar je gewoon moest doen was de juffrouw zei. <br>
+					Nadat ik voor het eerst van mijn leven mee moest doen aan een CITO toets bleek al gauw dat ik beter een klas over kon doen. <br>
+					De juffrouw van groep 7 geloofde dat ik het allemaal wel kon en zij heeft me geholpen de achterstand in te lopen.
+					Zodoende kon ik na de Rembrandtschool toch naar de brugklas van de Havo.
+				</td>
+			</tr>
+		</table>
+		</div>
+
+<!--menu item: Christelijk Lyceum Delft-->
+
+		<div id="ChristelijkLyceumDelft" style="display:none">
+		<h4 style="color:white">Christelijk Lyceum Delft</h4>
+		<p>
+		<table style="text-align:left; width: 940px; height: 620px;"  background="Old-Paper-Background.jpg">
+			<tr>	
+				<td style="vertical-align:top;">
+					<p>
+					<IMG src="plaatjes/CLD.jpg" width="200">
+					<IMG src="plaatjes/CLDFietsen.jpg" width="230">
+					<IMG src="plaatjes/CLD2.jpg" width="230"><br><br>
+					Het CLD was geen pretje. Het lijkt allemaal fantastisch, want ik ben niet blijven zitten en ben zonder onvoldoendes geslaagd voor de Havo.<br>
+					Maar de weg ernaartoe was niet plezierig. Ik heb een NT profiel kunnen doen en heb alle zinnige en onzinnige opdrachten tot een goed einde gebracht.
+					Een paar van mijn vrienden heb ik daar ontmoet en die zie ik nog steeds af en toe. <br>
+					Ik ben erg blij dat het achter de rug is.<br><br>
+					In de bovenbouw was ik er gauw uit: ik wilde informatica studeren!
+					Tijdens de lessen informatica op het CLD heb ik mooie dingen gemaakt: een website, en een 2D en een 3D game.
+					Daar ben ik wel trots op.
+				</td>
+			</tr>
+		</table>
+		</div>
+						
+<!--menu item Haagse Hogeschool-->
+
+		<div id="HaagseHogeschool" style="display:none">
+		<h4 style="color:white">Haagse Hogeschool</h4>
+		<p>
+		<table style="text-align:left; width: 940px; height: 620px;"  background="Old-Paper-Background.jpg">
+			<tr>	
+				<td style="vertical-align:top;">
+					<p>
+					<IMG src="plaatjes/HaagseHogeschool.jpg" width="200">
+					<IMG src="plaatjes/HaagseHogeschoolDelft.jpg" width="200">
+					<IMG src="plaatjes/HaagseHogeschoolLogo.jpg" width="240"><br><br>
+					Ik ben vorig jaar in Delft begonnen op de Haagse Hogeschool. <br>
+					Dat was gedurende het eerste half jaar flink blokken, want we kregen veel vakken voor andere richtingen dan software engineering.
+					Ik weet nu ook het een en ander van netwerken, security en bedrijfsmodellen dus dat is mooi meegenomen. <br>
+					Na dit halve jaar kreeg ik last van RSI en dit was zo erg, dat ik niet in staat was de tentamens in de tijd die ervoor stond af te ronden.
+					Ik heb het eerste half jaar alle studiepunten opgehaald, maar daarna lukt dit niet goed meer door mijn pols. <br>
+					Na diverse therapeuten te hebben bezocht gaat het nu een stukje beter, maar het is nog steeds niet super.
+					Omdat ik niet genoeg studiepunten heb behaald, ben ik niet geslaagd voor het bindend studieadvies in Den Haag.  Ik moest daarom in Rotterdam opnieuw beginnen.
+				</td>
+			</tr>
+		</table>
+		</div>
+			
+<!--menu item Hogeschool Rotterdam-->
+
+		<div id="HogeschoolRotterdam" style="display:none">
+		<h4 style="color:white">Hogeschool Rotterdam</h4>
+		<p>
+		<table style="text-align:left; width: 940px; height: 620px;"  background="Old-Paper-Background.jpg">
+			<tr>	
+				<td style="vertical-align:top;">
+					<p>
+					<IMG src="plaatjes/HogeschoolRotterdam.jpg" width="300">
+					<IMG src="plaatjes/HogeschoolRotterdamLogo.png" width="350"><br><br>
+					Op de Hogeschool Rotterdam is de opleiding gelukkig toch iets anders. <br>
+					De lessen zijn er meestal in het Engels en dat is voor de ICT wel een goed idee. <br>
+					Ook kon ik nu direct een keuze voor software engineering maken en hoef ik niet meer aan de slag met dingen die mij niet zo boeien zoals de hardware opdracht met de Arduino.<br><br>
+					Ik hoop dat het dit jaar met mijn hand de goede kant op gaat, want ik wil nog steeds graag in de ICT aan de slag.
+					Tot nu toe gaat het so far, so good. Ik heb er veel plezier van dat ik al weet hoe het er op een hogeschool aan toe gaat. <br><br>
+					Want dat is toch heel anders dan de middelbare school.
+				</td>
+			</tr>
+		</table>
+		</div>
+			
+		
+<!--menu item Gamen-->
+
+		<div id="Gamen" style="display:none">
+		<h4 style="color:white">Gamen</h4>
+		<p>
+		<table style="text-align:left; width: 940px; height: 620px;"  background="Old-Paper-Background.jpg">
+			<tr>	
+				<td style="vertical-align:top;">
+					<p>
+					<IMG src="plaatjes/LeagueOfLegends.jpg" width="200">
+					<IMG src="plaatjes/RocketLeague.jpg" width="200">
+					<IMG src="plaatjes/PUBG.jpg" width="200">
+					<IMG src="plaatjes/SWBF2.png" width="200"><br><br>
+					Het is niet verrassend dat gamen mijn belangrijkste hobby is. <br>
+					Niet alleen het spelen van games, maar ook het streamen op Twitch.<br>
+					Ik ben Gold 5 op League of Legends en weet veel van het spel af qua strategie, aanpak en uitvoering. <br><br>
+					Door de blessure aan mijn hand doe ik het tegenwoordig rustiger aan. <br>
+					Ik doe niet alleen League of Legends, want ik vind het ook leuk om Rocket League, Player Unknown Battlegrounds, Star Wars Battlefront 2 en GTA te spelen. 
+				</td>
+			</tr>
+		</table>
+		</div>
+			
+<!--menu item Film kijken-->
+
+		<div id="FilmKijken" style="display:none">
+		<h4 style="color:white">Film Kijken</h4>
+		<p>
+		<table style="text-align:left; width: 940px; height: 620px;"  background="Old-Paper-Background.jpg">
+			<tr>	
+				<td style="vertical-align:top;">
+					<p>
+					<IMG src="plaatjes/Arrow.jpg" width="200">
+					<IMG src="plaatjes/LukeCage.jpg" width="200">
+					<IMG src="plaatjes/gameofthrones.jpg" width="215">
+					<IMG src="plaatjes/TheLastKingdom.jpg" width="200"><br><br>
+					Naast gamen vind ik het leuk om films te kijken. Dat kan van alles zijn. <br>
+					Ik houd op mijn iPad een aantal leuke series bij, ik zie veel trailers van nieuwe films en ik ga graag naar de bios. <br><br>
+					Verder houd ik ervan om films te kijken, bijvoorbeeld op Netflix. <br>
+					En er zijn natuurlijk een heleboel goede series te zien, zoals Arrow, Luke Cage, Game of Thrones en the Last Kingdom. <br><br>
+					Ik zie uit naar de premiere van de nieuwste Star Wars film. In de bios natuurlijk, twee dagen voor de wereldpremiere.
+				</td>
+			</tr>
+		</table>
+		</div>
+			
+<!--menu item Hockey-->
+
+		<div id="Hockey" style="display:none">
+		<h4 style="color:white">Hockey</h4>
+		<p>
+		<table style="text-align:left; width: 940px; height: 620px;"  background="Old-Paper-Background.jpg">
+			<tr>	
+				<td style="vertical-align:top;">
+					<p>
+					<IMG src="plaatjes/Hudito.jpg" width="200">
+					<IMG src="plaatjes/RingPass.jpg" width="300">
+					<IMG src="plaatjes/RingPassLogo.jpg" width="130"><br><br>
+					Vanaf mijn zesde jaar speel ik hockey, eerst bij Hudito en daarna bij Ring Pass. <br>
+					Dat vind ik leuk om te doen, maar sinds mijn RSI lukt het niet meer om mee te trainen en wedstrijden te spelen. <br><br>
+					Ik ben nog wel onderdeel van mijn team en ga af en toe mee naar wedstrijden en doe bardienst. <br>
+					Ook ga ik natuurlijk mee als er een feest is. <br>
+					Ik hoop dat mijn hand nog een keer zo opknapt dat ik weer mee kan gaan doen.
+				</td>
+			</tr>
+		</table>
+		</div>
+	</div>	
+
+<!--Footer met zoekboxje en W3C logo-->
+
+ <div class="footer">
+	<table style="width:100%; padding: 10px 0px 10px 5px; background-color:green; color:white">
+		<tr>
+			<td width="40%">Ontwerp: Erwin Maarleveld (c) 2017</td>
+			<td width="30%">Contact: <a href="mailto:0957904@hr.nl">0957904@hr.nl</a></td> 
+			<td width="60%"><FORM METHOD="get" ACTION="http://www.google.nl/search" TARGET="_blank">
+								<INPUT TYPE="text" NAME="q" SIZE="35"> &nbsp; <INPUT TYPE="submit" NAME="btnG" VALUE="Zoeken in Google">
+							</FORM></td>
+			<td width="25%"<a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:68px;height:24px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valide CSS!" />
+    </a></td>
+		</tr>
+	</table>	
+ </div>
+ 
+<!-- einde 2 KOLOMMEN -->
+	
+</body>
+</html>
