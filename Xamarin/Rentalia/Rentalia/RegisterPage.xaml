@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Rentalia.RegisterPage"
+             BackgroundImage="background2.jpg">
+    <ContentPage.Content>
+
+
+        <StackLayout VerticalOptions="Center"
+                     HorizontalOptions="Center"
+                     Spacing="30">
+
+
+            <Entry Placeholder="E-mail"
+                               FontSize="Small"
+                               PlaceholderColor="Black"
+                               Keyboard="Email"
+                               BackgroundColor="OrangeRed"
+                               Scale="1.5"
+                               x:Name="email"/>
+            <Entry Placeholder="Voornaam"
+                               FontSize="Small"
+                               PlaceholderColor="Black"
+                               BackgroundColor="OrangeRed"
+                               Scale="1.5"
+                               x:Name="voornaam"/>
+            <Entry Placeholder="Tussenvoegsel"
+                               FontSize="Small"
+                               PlaceholderColor="Black"
+                               BackgroundColor="OrangeRed"
+                               Scale="1.5"
+                               x:Name="tussen"/>
+            <Entry Placeholder="Achternaam"
+                               FontSize="Small"
+                               PlaceholderColor="Black"
+                               BackgroundColor="OrangeRed"
+                               Scale="1.5"
+                               x:Name="achternaam"/>
+            <Entry IsPassword="True"
+                               FontSize="Small"
+                               Placeholder="Password"
+                               PlaceholderColor="Black"
+                               BackgroundColor="OrangeRed"
+                               Scale="1.5"
+                               x:Name="pass1"/>
+            <Entry IsPassword="True"
+                               FontSize="Small"
+                               Placeholder="Retype Password"
+                               PlaceholderColor="Black"
+                               BackgroundColor="OrangeRed"
+                               Scale="1.5"
+                               x:Name="pass2"/>
+            <Button Text="Register"
+                                FontSize="Small"
+                                BackgroundColor="OrangeRed"
+                                BorderColor="Black"
+                                BorderWidth="1"
+                                Scale="1.5"
+                                Clicked="OnClickHub"/>
+            <Button Text="I'm already member"
+                                FontSize="Small"
+                                BackgroundColor="OrangeRed"
+                                BorderColor="Black"
+                                BorderWidth="1"
+                                Scale="1.5"
+                                Clicked="OnClickLogin"/>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

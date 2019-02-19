@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Rentalia.MessagePage"
+             BackgroundImage="background2.jpg">
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions Grid.Row="0">
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!--message icon-->
+            <Image Source="mailIcon.png" TranslationX="10" WidthRequest="40" HeightRequest="40" TranslationY="3" Grid.Row="0" Grid.Column="0" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnClickMailBox" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <!--offerlist icon-->
+            <Image Source="listIcon.png" WidthRequest="40" HeightRequest="40" TranslationX="5" TranslationY="3" Grid.Row="0" Grid.Column="1">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnClickOfferPage" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <!--profile icon-->
+            <Image Source="userIcon.png" WidthRequest="40" HeightRequest="40" TranslationY="3" Grid.Row="0"  Grid.Column="2" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnClickUserPage" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <!--log out icon-->
+            <Image Source="homeIcon.png" TranslationX="-5" WidthRequest="40" HeightRequest="40" TranslationY="3" Grid.Row="0"  Grid.Column="3">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnClickHubPage" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <!--add offer icon-->
+            <Image Source="plusIcon.png" VerticalOptions="Center" TranslationX="-10" WidthRequest="50" HeightRequest="50" TranslationY="4" Grid.Row="0"  Grid.Column="4">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnClickAddOffer" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Image Source="rLogo.png" BackgroundColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="20" Opacity="0.5" Aspect="Fill" Grid.Row="1" Grid.ColumnSpan="5" />
+
+            <Frame BackgroundColor="Transparent" HorizontalOptions="Start" VerticalOptions="Start" Margin="20" Grid.Row="1" Grid.ColumnSpan="5" HeightRequest="700" WidthRequest="700" BorderColor="Black" >
+                <StackLayout Padding="0,20,0,0">
+                    <Label Text="---Inbox---" TextColor="Black" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <ListView x:Name="stackView" HasUnevenRows="true" BackgroundColor="Transparent" ItemTapped="OnClickMessage">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Vertical">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding Verzender.Voornaam}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
+                                            <Label Text="{Binding Verzender.Tussenvoegsel}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
+                                            <Label Text="{Binding Verzender.Achternaam}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
+                                        </StackLayout>
+                                        
+                                        <Label Text="{Binding Onderwerp.Titel}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
+                                        <Label Text="{Binding Datumtijd}" TextColor="Black" BackgroundColor="Transparent" Font="18" />
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Frame>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

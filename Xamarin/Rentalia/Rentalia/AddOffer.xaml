@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Rentalia.AddOffer"
+             BackgroundImage="background2.jpg">
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions Grid.Row="0">
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+
+            <!--message icon-->
+            <Image Source="mailIcon.png" TranslationX="10" WidthRequest="40" HeightRequest="40" TranslationY="3" Grid.Row="0" Grid.Column="0" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnClickMailBox" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <!--offerlist icon-->
+            <Image Source="listIcon.png" WidthRequest="40" HeightRequest="40" TranslationX="5" TranslationY="3" Grid.Row="0" Grid.Column="1">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnClickOfferPage" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <!--profile icon-->
+            <Image Source="userIcon.png" WidthRequest="40" HeightRequest="40" TranslationY="3" Grid.Row="0"  Grid.Column="2" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnClickUserPage" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <!--log out icon-->
+            <Image Source="homeIcon.png" TranslationX="-5" WidthRequest="40" HeightRequest="40" TranslationY="3" Grid.Row="0"  Grid.Column="3">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnClickHubPage" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <StackLayout Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3">
+                <Entry FontSize="Small"
+                   Placeholder="Titel"
+                   PlaceholderColor="Black"
+                   TextColor="Black"
+                   BackgroundColor="OrangeRed"
+                       TranslationY="40"
+                       Scale="1.5"
+                   x:Name="title"/>
+
+                <Entry FontSize="Small"
+                   Placeholder="Description"
+                   PlaceholderColor="Black"
+                   TextColor="Black"
+                   BackgroundColor="OrangeRed"
+                       TranslationY="60"
+                       Scale="1.5"
+                   x:Name="desc"/>
+
+                <Entry FontSize="Small"
+                   Placeholder="Prijs per dag"
+                   PlaceholderColor="Black"
+                   TextColor="Black"
+                   BackgroundColor="OrangeRed"
+                   Keyboard="Numeric"
+                       TranslationY="80"
+                       Scale="1.5"
+                   x:Name="price"/>
+
+                <DatePicker BackgroundColor="OrangeRed"
+                            Scale="1.5"
+                            TranslationY="100"
+                            TextColor="Black" />
+                <DatePicker BackgroundColor="OrangeRed"
+                            Scale="1.5"
+                            TranslationY="120"
+                            TextColor="Black"/>
+<!--
+                <Button Text="Voeg plaatje toe"
+                        FontSize="Small"
+                        Clicked="OnUpload"
+                        BackgroundColor="OrangeRed"
+                        BorderColor="Black"
+                        Scale="1.5"
+                        TranslationY="150"
+                        BorderWidth="1"/>
+ -->               
+                <Button Text="Voeg offer toe"
+                        FontSize="Small"
+                        Clicked="OnClickPlaceOffer"
+                        BackgroundColor="OrangeRed"
+                        BorderColor="Black"
+                        Scale="1.5"
+                        TranslationY="180"
+                        BorderWidth="1"/>
+            </StackLayout>
+            <!-- Button voeg offer toe zou onlclick:OnClickPlaceOffer moeten doen -->
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
