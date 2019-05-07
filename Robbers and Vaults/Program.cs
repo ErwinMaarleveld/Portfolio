@@ -9,9 +9,11 @@ namespace Robbers
 {
     public class Vault{
         public string Code {get; set;}
+        public int Status {get; set;}   // -1 = Vault is cracked, 0 = Free vault, 1 = Robber is working on this vault
 
         public Vault(){
             Code = createCode(Code);
+            Status = 0;
         }
 
         public string createCode(string Code){
@@ -50,19 +52,18 @@ namespace Robbers
 
     public class Robber{
 
-        public int RobberNumber {get; set;}
+        
         public Vault CurrentVault {get; set;}
         public List<string> allPossibleNumberCombinations {get; set;}
         public List<string> allPossibleVowelCombinations {get; set;}
 
-        public Robber(int numberOfRobber, Vault vault, List<string> numberCombinations, List<string> vowelCombinations){
-            RobberNumber = numberOfRobber;
+        public Robber(Vault vault, List<string> numberCombinations, List<string> vowelCombinations){
             CurrentVault = vault;
             allPossibleNumberCombinations = numberCombinations;
             allPossibleVowelCombinations = vowelCombinations;
         }
 
-        public void CrackVault(Vault[] allVaults){
+        public void CrackVault(){
             string tempCombination = "";
             for (int i = 0; i < allPossibleNumberCombinations.Count; i++)
             {
@@ -73,15 +74,47 @@ namespace Robbers
                     {
                         Console.WriteLine("The code has been cracked! " + CurrentVault.Code);
                         Console.WriteLine("tempCombination = " + tempCombination);
-                        for (int a = 0; a < allVaults.Count(); a++)
-                        {
-                            allVaults[(Array.IndexOf(allVaults, tempCombination))-1].Code = "";
-                            
-                        }
+                        CurrentVault.Status = -1; 
+                        break;
                     }
                 }
             }
         }
+
+        public void processRobber(Vault[] allVaults){
+                try
+                    {
+                        if (CurrentVault.Status == 1)
+                        {
+                            Console.WriteLine("Cracking current vault");
+                            CrackVault();
+                        }
+                        
+                        if (CurrentVault.Status == -1)
+                        {
+                            Console.WriteLine("This vault is cracked!");
+                            
+                            for (int i = 0; i < allVaults.Count(); i++)
+                            {
+                                if (allVaults[i].Status == 0)
+                                {
+                                    Console.WriteLine("Getting new vault");
+                                    CurrentVault = allVaults[i];
+                                    CurrentVault.Status = 1;
+                                    Console.WriteLine("Next vault code is: " + CurrentVault.Code);
+                                    //Console.WriteLine("Starting proseccing again");
+                                    //processRobber(allVaults);
+                                    break;
+                                }
+                            }
+
+                        }  
+                    }
+                    catch (System.NullReferenceException)
+                    {
+                        Console.WriteLine("Object is not an instance, fixing  it later");
+                    }
+            }
 
 
     }
@@ -91,8 +124,10 @@ namespace Robbers
         static void Main(string[] args)
         {
 
-            int numberOfRobbers = 1;
-            int numberOfVaults = 1;
+            bool allVaultsCracked = false;
+            int totalVaultsCracked = 0;
+            int numberOfRobbers = 3;
+            int numberOfVaults = 2;
             List<string> allPossibleNumberCombinations = createListPossibleCombinations("0123");  //Needs to be "0123456789" but for it is made short for testing
             List<string> allPossibleVowelCombinations = createListPossibleCombinations("AEOIU");
             Vault[] allVaults = new Vault[numberOfVaults];
@@ -108,41 +143,93 @@ namespace Robbers
             {
                 try
                 {
-                    allRobbers[i] = new Robber(i, allVaults[i], allPossibleNumberCombinations, allPossibleVowelCombinations);
-                    
+                    for (int p = 0; p < allVaults.Count(); p++)
+                    {
+                        if (allVaults[p].Status == 0)
+                        {
+                            Console.WriteLine("Current robber number: " + i);
+                            allRobbers[i] = new Robber(allVaults[p], allPossibleNumberCombinations, allPossibleVowelCombinations);
+                            allVaults[p].Status = 1;
+                            break;
+                        } 
+                    }
+         
                 }
                 catch (System.IndexOutOfRangeException)
                 {
-                    Console.WriteLine("There are more robbers then vaults!");
+                    Console.WriteLine("There are more robbers than available vaults!");
                     break;
-                    throw;
+                    
                 }
             }
-
-            allRobbers[0].CrackVault(allVaults);
-
-            Console.WriteLine(allVaults[0].Code);
-            Console.WriteLine(allRobbers[0].CurrentVault.Code);
-                        
-            List<string> createListPossibleCombinations(string avalibleCharacters){
-            List<string> tempList = new List<string>();
-            string alphabet = avalibleCharacters;
-            var q = alphabet.Select(x => x.ToString());
-            int size = alphabet.Length;
-            for (int i = 0; i < size - 1; i++){
-                q = q.SelectMany(x => alphabet, (x, y) => x + y);
-            }
             
-            foreach (var item in q){
-                tempList.Add(item);
-                Console.WriteLine(item);
+            
+                
+            while (!allVaultsCracked)
+            {
+                
+            
+
+                for (int x = 0; x < allRobbers.Count(); x++)
+                {
+                    if (allRobbers[x] != null)
+                    {
+                        Console.WriteLine("Current Robber: " + x);
+                        allRobbers[x].processRobber(allVaults);
+                    }
+                    
+                    
+                }
+                
+                totalVaultsCracked = 0;
+                for (int p = 0; p < allVaults.Count(); p++)
+                {   
+                    if (allVaults[p].Status == -1)
+                    {
+                        totalVaultsCracked++;
+                        
+                        
+                    }
+                }
+                Console.WriteLine("Total vaults cracked: " + totalVaultsCracked);
+
+                if (totalVaultsCracked == allVaults.Count())
+                {
+                    allVaultsCracked = true;
+                }
+
+                
             }
-            return tempList;
-        }
+
+            
+
+            
+                                   
+            List<string> createListPossibleCombinations(string avalibleCharacters){
+                List<string> tempList = new List<string>();
+                string alphabet = avalibleCharacters;
+                var q = alphabet.Select(x => x.ToString());
+                int size = alphabet.Length;
+                for (int i = 0; i < size - 1; i++){
+                    q = q.SelectMany(x => alphabet, (x, y) => x + y);
+                }
+                
+                foreach (var item in q){
+                    tempList.Add(item);
+                }
+                return tempList;
+            }
+
+        //var C = int.Parse(inputs[0]);
+        //var N = int.Parse(inputs[1]);
+        //var combinations = Convert.ToInt32(Math.Pow(5, (C-N))) * Convert.ToInt32(Math.Pow(10, (N)));
+
 
         }
 
-        
+            
 
-    }
+    } 
+
+    
 }
