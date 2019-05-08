@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections;
 using System.Linq;
@@ -35,13 +35,10 @@ namespace Robbers
             int totalVaultsCracked = 0;
             var inputs = new List<string>{ "10", "5" };     //format: [0] = number of total length of code; [1] = number of availible digits
             var C = int.Parse(inputs[0]);
-            Console.WriteLine("C has a value of: " + C);
             var N = int.Parse(inputs[1]);
-            Console.WriteLine("N has a value of: " + N);
             var combinations = Convert.ToInt32(Math.Pow(5, (C-N))) * Convert.ToInt32(Math.Pow(10, (N)));
-            Console.WriteLine("Total possible combinations are: " + combinations);
-            int numberOfRobbers = 2;    //This number can be 1+
-            int numberOfVaults = 1;     //this number can be 1+
+            int numberOfRobbers = 8;    //This number can be 1+
+            int numberOfVaults = 10;     //this number can be 1+
             Vault[] allVaults = new Vault[numberOfVaults];
             Robber[] allRobbers = new Robber[numberOfRobbers];
 
@@ -68,45 +65,56 @@ namespace Robbers
             {
                 for (int i = 0; i < allRobbers.Count(); i++)
                 {
-                    try
+                    if (allRobbers[i].currentVault.status == 1)
                     {
-                        if (allRobbers[i].currentVault.status == 1)
+                        Console.WriteLine("Starting to crack vault.");
+                        DateTime startingTime = DateTime.Now;
+                        bool combinationFound = false;
+                        while (!combinationFound)
                         {
-                            bool combinationFound = false;
-                            while (!combinationFound)
+                            if (random.Next(1, combinations) == 1)
                             {
-                                if (random.Next(1, combinations) == 1)
-                                {
-                                    allRobbers[i].currentVault.status = -1;
-                                    Console.WriteLine("Vault is cracked!");
-                                    combinationFound = true;
-                                    totalVaultsCracked++;
+                                DateTime endingTime = DateTime.Now;
+                                allRobbers[i].totalTimeSpentCracking += (endingTime - startingTime).TotalSeconds;
+                                allRobbers[i].currentVault.status = -1;
+                                Console.WriteLine("Vault is cracked!");
+                                combinationFound = true;
+                                totalVaultsCracked++;
 
-                                    for (int j = 0; j < allVaults.Count(); j++)
+                                for (int j = 0; j < allVaults.Count(); j++)
+                                {
+                                    if (allVaults[j].status == 0)
                                     {
-                                        if (allVaults[j].status == 0)
-                                        {
-                                            allRobbers[i].currentVault = allVaults[j];
-                                        }
+                                        allRobbers[i].currentVault = allVaults[j];
+                                        allRobbers[i].currentVault.status = 1;
+                                        break;
                                     }
                                 }
                             }
                         }
-                    }
-                    catch (System.NullReferenceException)
-                    {
-                        Console.WriteLine($"This robber, robber {i + 1}, doesn't have a vault.");    
-                    }
-                    
+                    }                   
                 }
 
                 if (totalVaultsCracked == numberOfVaults)
                 {
                     allVaultsCracked = true;
-                    Console.WriteLine("All vaults are cracked!");
-                    Console.WriteLine($"Total vaults are: {numberOfVaults}, and total number of vaults in array is: {allVaults.Count()}");
-                    Console.WriteLine("Total cracked vauts are: " + totalVaultsCracked);
-                    Console.WriteLine($"Total robbers is: {numberOfRobbers}, and total number of robbers in array is: {allRobbers.Count()}");
+                    var longestTimeCracking = 0.0;
+                    for (int i = 0; i < allRobbers.Count(); i++)
+                    {
+                        try
+                        {
+                            if (allRobbers[i].totalTimeSpentCracking > longestTimeCracking)
+                            {
+                                longestTimeCracking = allRobbers[i].totalTimeSpentCracking;
+                            }
+                            
+                        }
+                        catch (System.NullReferenceException)
+                        {
+                            break;
+                        }  
+                    }
+                    Console.WriteLine($"The robbers did {longestTimeCracking} over cracking {allVaults.Count()} vault(s) with {allRobbers.Count()} robber(s).");
                 }
                 
                 
