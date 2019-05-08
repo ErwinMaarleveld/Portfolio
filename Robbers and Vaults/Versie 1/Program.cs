@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections;
 using System.Linq;
@@ -19,11 +19,8 @@ namespace Robbers
         public string createCode(string Code){
             List<string> numbers = new List<string>(){"0", "1", "2", "3"/*,"4","5", "6", "7", "8", "9"*/}; //need to remove comments for finished product but its made short for testing
             List<string> vowels = new List<string>(){"A", "E", "O", "I", "U"};
-
-
             numbers = ShuffleList<string>(numbers);
             vowels = ShuffleList<string>(vowels);
-
             numbers.AddRange(vowels);
             string tempCode = "";
             foreach (var number in numbers)
@@ -37,7 +34,6 @@ namespace Robbers
         private List<E> ShuffleList<E>(List<E> inputList)
         {
             List<E> randomList = new List<E>();
-
             Random r = new Random();
             int randomIndex = 0;
             while (inputList.Count > 0)
@@ -69,7 +65,7 @@ namespace Robbers
             {
                 for (int j = 0; j < allPossibleVowelCombinations.Count; j++)
                 {
-                    tempCombination = allPossibleNumberCombinations[i] + allPossibleVowelCombinations [j];
+                    tempCombination = allPossibleNumberCombinations[i] + allPossibleVowelCombinations[j];
                     if (tempCombination == CurrentVault.Code)
                     {
                         Console.WriteLine("The code has been cracked! " + CurrentVault.Code);
@@ -88,12 +84,10 @@ namespace Robbers
                         {
                             Console.WriteLine("Cracking current vault");
                             CrackVault();
-                        }
-                        
+                        }                       
                         if (CurrentVault.Status == -1)
                         {
-                            Console.WriteLine("This vault is cracked!");
-                            
+                            Console.WriteLine("This vault is cracked!");                            
                             for (int i = 0; i < allVaults.Count(); i++)
                             {
                                 if (allVaults[i].Status == 0)
@@ -102,12 +96,9 @@ namespace Robbers
                                     CurrentVault = allVaults[i];
                                     CurrentVault.Status = 1;
                                     Console.WriteLine("Next vault code is: " + CurrentVault.Code);
-                                    //Console.WriteLine("Starting proseccing again");
-                                    //processRobber(allVaults);
                                     break;
                                 }
                             }
-
                         }  
                     }
                     catch (System.NullReferenceException)
@@ -121,13 +112,13 @@ namespace Robbers
 
     class Program
     {
+
         static void Main(string[] args)
         {
-
             bool allVaultsCracked = false;
             int totalVaultsCracked = 0;
-            int numberOfRobbers = 3;
-            int numberOfVaults = 2;
+            int numberOfRobbers = 1;    //This number can be 1+
+            int numberOfVaults = 100;     //this number can be 1+
             List<string> allPossibleNumberCombinations = createListPossibleCombinations("0123");  //Needs to be "0123456789" but for it is made short for testing
             List<string> allPossibleVowelCombinations = createListPossibleCombinations("AEOIU");
             Vault[] allVaults = new Vault[numberOfVaults];
@@ -152,59 +143,46 @@ namespace Robbers
                             allVaults[p].Status = 1;
                             break;
                         } 
-                    }
-         
+                    }        
                 }
                 catch (System.IndexOutOfRangeException)
                 {
                     Console.WriteLine("There are more robbers than available vaults!");
-                    break;
-                    
+                    break;                    
                 }
             }
-            
-            
-                
+
+            DateTime startingTime = DateTime.Now;
+            Console.WriteLine("Starting time is: " + startingTime);
             while (!allVaultsCracked)
             {
-                
-            
-
                 for (int x = 0; x < allRobbers.Count(); x++)
                 {
                     if (allRobbers[x] != null)
                     {
                         Console.WriteLine("Current Robber: " + x);
                         allRobbers[x].processRobber(allVaults);
-                    }
-                    
-                    
-                }
-                
+                    }     
+                } 
                 totalVaultsCracked = 0;
                 for (int p = 0; p < allVaults.Count(); p++)
                 {   
                     if (allVaults[p].Status == -1)
                     {
-                        totalVaultsCracked++;
-                        
-                        
+                        totalVaultsCracked++;  
                     }
                 }
                 Console.WriteLine("Total vaults cracked: " + totalVaultsCracked);
-
                 if (totalVaultsCracked == allVaults.Count())
                 {
                     allVaultsCracked = true;
-                }
-
-                
+                } 
             }
 
-            
-
-            
-                                   
+            DateTime endingTime = DateTime.Now;
+            var timeToCompleteProgram = (endingTime - startingTime).TotalSeconds;
+            Console.WriteLine("Time to crack all vauts is: " + timeToCompleteProgram + " seconds.");
+                     
             List<string> createListPossibleCombinations(string avalibleCharacters){
                 List<string> tempList = new List<string>();
                 string alphabet = avalibleCharacters;
@@ -212,8 +190,7 @@ namespace Robbers
                 int size = alphabet.Length;
                 for (int i = 0; i < size - 1; i++){
                     q = q.SelectMany(x => alphabet, (x, y) => x + y);
-                }
-                
+                }                
                 foreach (var item in q){
                     tempList.Add(item);
                 }
@@ -223,13 +200,6 @@ namespace Robbers
         //var C = int.Parse(inputs[0]);
         //var N = int.Parse(inputs[1]);
         //var combinations = Convert.ToInt32(Math.Pow(5, (C-N))) * Convert.ToInt32(Math.Pow(10, (N)));
-
-
-        }
-
-            
-
+      }
     } 
-
-    
 }
