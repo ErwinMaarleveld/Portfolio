@@ -114,7 +114,7 @@ namespace Robbers
                             break;
                         }  
                     }
-                    Console.WriteLine($"The robbers did {longestTimeCracking} over cracking {allVaults.Count()} vault(s) with {allRobbers.Count()} robber(s).");
+                    Console.WriteLine($"The robbers did {longestTimeCracking} seconds over cracking {allVaults.Count()} vault(s) with {allRobbers.Count()} robber(s).");
                 }
                 
                 
