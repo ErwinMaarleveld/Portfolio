@@ -37,14 +37,14 @@ namespace Robbers
             var C = int.Parse(inputs[0]);
             var N = int.Parse(inputs[1]);
             var combinations = Convert.ToInt32(Math.Pow(5, (C-N))) * Convert.ToInt32(Math.Pow(10, (N)));
-            int numberOfRobbers = 8;    //This number can be 1+
-            int numberOfVaults = 10;     //this number can be 1+
-            Vault[] allVaults = new Vault[numberOfVaults];
-            Robber[] allRobbers = new Robber[numberOfRobbers];
+            int numberOfRobbers = 1;    //This number can be 1+
+            int numberOfVaults = 1;     //this number can be 1+
+            IList<Vault> vaultList = new List<Vault>();
+            IList<Robber> robberList = new List<Robber>();
 
             //creating all vaults
             for (int i = 0; i < numberOfVaults; i++){
-                allVaults[i] = new Vault();
+                vaultList.Add(new Vault());
             }
 
             //creating all robbers and giving them a first vault if possible
@@ -52,20 +52,25 @@ namespace Robbers
             {
                 try
                 {
-                    allRobbers[i] = new Robber(allVaults[i]);
+                    robberList.Add(new Robber(vaultList.First(v => v.status == 0)));
                 }
                 catch (System.IndexOutOfRangeException)
                 {
                     Console.WriteLine("There are more robbers than available vaults!");
                     break;                    
                 }
+                catch (System.NullReferenceException)
+                {
+                    Console.WriteLine("There are more robbers than available vaults!");
+                    break; 
+                }
             }
 
             while (!allVaultsCracked)
             {
-                for (int i = 0; i < allRobbers.Count(); i++)
+                for (int i = 0; i < robberList.Count(); i++)
                 {
-                    if (allRobbers[i].currentVault.status == 1)
+                    if (robberList[i].currentVault.status == 1)
                     {
                         Console.WriteLine("Starting to crack vault.");
                         DateTime startingTime = DateTime.Now;
@@ -75,18 +80,18 @@ namespace Robbers
                             if (random.Next(1, combinations) == 1)
                             {
                                 DateTime endingTime = DateTime.Now;
-                                allRobbers[i].totalTimeSpentCracking += (endingTime - startingTime).TotalSeconds;
-                                allRobbers[i].currentVault.status = -1;
+                                robberList[i].totalTimeSpentCracking += (endingTime - startingTime).TotalSeconds;
+                                robberList[i].currentVault.status = -1;
                                 Console.WriteLine("Vault is cracked!");
                                 combinationFound = true;
                                 totalVaultsCracked++;
 
-                                for (int j = 0; j < allVaults.Count(); j++)
+                                for (int j = 0; j < vaultList.Count(); j++)
                                 {
-                                    if (allVaults[j].status == 0)
+                                    if (vaultList[j].status == 0)
                                     {
-                                        allRobbers[i].currentVault = allVaults[j];
-                                        allRobbers[i].currentVault.status = 1;
+                                        robberList[i].currentVault = vaultList[j];
+                                        robberList[i].currentVault.status = 1;
                                         break;
                                     }
                                 }
@@ -99,13 +104,13 @@ namespace Robbers
                 {
                     allVaultsCracked = true;
                     var longestTimeCracking = 0.0;
-                    for (int i = 0; i < allRobbers.Count(); i++)
+                    for (int i = 0; i < robberList.Count(); i++)
                     {
                         try
                         {
-                            if (allRobbers[i].totalTimeSpentCracking > longestTimeCracking)
+                            if (robberList[i].totalTimeSpentCracking > longestTimeCracking)
                             {
-                                longestTimeCracking = allRobbers[i].totalTimeSpentCracking;
+                                longestTimeCracking = robberList[i].totalTimeSpentCracking;
                             }
                             
                         }
@@ -114,12 +119,9 @@ namespace Robbers
                             break;
                         }  
                     }
-                    Console.WriteLine($"The robbers did {longestTimeCracking} seconds over cracking {allVaults.Count()} vault(s) with {allRobbers.Count()} robber(s).");
-                }
-                
-                
-            }
-                   
-      }
+                    Console.WriteLine($"The robbers did {longestTimeCracking} seconds over cracking {vaultList.Count()} vault(s) with {robberList.Count()} robber(s).");
+                }       
+            }              
+        } 
     } 
 }
