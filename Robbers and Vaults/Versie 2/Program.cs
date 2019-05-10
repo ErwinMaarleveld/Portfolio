@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections;
 using System.Linq;
@@ -27,9 +27,9 @@ namespace Robbers
 
     class Program
     {
-
         static void Main(string[] args)
         {
+            Console.WriteLine("Program started!");
             Random random = new Random();
             bool allVaultsCracked = false;
             int totalVaultsCracked = 0;
@@ -37,11 +37,11 @@ namespace Robbers
             var C = int.Parse(inputs[0]);
             var N = int.Parse(inputs[1]);
             var combinations = Convert.ToInt32(Math.Pow(5, (C-N))) * Convert.ToInt32(Math.Pow(10, (N)));
-            int numberOfRobbers = 1;    //This number can be 1+
-            int numberOfVaults = 1;     //this number can be 1+
+            int numberOfRobbers = 4;    //This number can be 1+
+            int numberOfVaults = 5;     //this number can be 1+
             IList<Vault> vaultList = new List<Vault>();
             IList<Robber> robberList = new List<Robber>();
-
+            Func<Vault> newFreeVault = () => vaultList.FirstOrDefault(v => v.status == 0);
             //creating all vaults
             for (int i = 0; i < numberOfVaults; i++){
                 vaultList.Add(new Vault());
@@ -52,72 +52,61 @@ namespace Robbers
             {
                 try
                 {
-                    robberList.Add(new Robber(vaultList.First(v => v.status == 0)));
-                }
-                catch (System.IndexOutOfRangeException)
-                {
-                    Console.WriteLine("There are more robbers than available vaults!");
-                    break;                    
+                    robberList.Add(new Robber(vaultList.FirstOrDefault(v => v.status == 0)));
                 }
                 catch (System.NullReferenceException)
-                {
-                    Console.WriteLine("There are more robbers than available vaults!");
-                    break; 
-                }
+                {}    
             }
 
             while (!allVaultsCracked)
             {
-                for (int i = 0; i < robberList.Count(); i++)
+                foreach (var robber in robberList)
                 {
-                    if (robberList[i].currentVault.status == 1)
+                    try
                     {
-                        Console.WriteLine("Starting to crack vault.");
-                        DateTime startingTime = DateTime.Now;
-                        bool combinationFound = false;
-                        while (!combinationFound)
+                        if (robber.currentVault.status == 1)
                         {
-                            if (random.Next(1, combinations) == 1)
+                            DateTime startingTime = DateTime.Now;
+                            bool combinationFound = false;
+                            while (!combinationFound)
                             {
-                                DateTime endingTime = DateTime.Now;
-                                robberList[i].totalTimeSpentCracking += (endingTime - startingTime).TotalSeconds;
-                                robberList[i].currentVault.status = -1;
-                                Console.WriteLine("Vault is cracked!");
-                                combinationFound = true;
-                                totalVaultsCracked++;
-
-                                for (int j = 0; j < vaultList.Count(); j++)
+                                if (random.Next(1, combinations) == 1)
                                 {
-                                    if (vaultList[j].status == 0)
+                                    try
                                     {
-                                        robberList[i].currentVault = vaultList[j];
-                                        robberList[i].currentVault.status = 1;
-                                        break;
+                                        DateTime endingTime = DateTime.Now;
+                                        robber.totalTimeSpentCracking += (endingTime - startingTime).TotalSeconds;
+                                        robber.currentVault.status = -1;
+                                        combinationFound = true;
+                                        totalVaultsCracked++;
+                                        robber.currentVault = newFreeVault();
+                                        robber.currentVault.status = 1;  
                                     }
+                                    catch (System.NullReferenceException)
+                                    {
+                                        break;
+                                    }   
                                 }
                             }
                         }
-                    }                   
+                    }
+                    catch (System.NullReferenceException)
+                    {
+                        break;
+                    }
+                        
                 }
 
                 if (totalVaultsCracked == numberOfVaults)
                 {
                     allVaultsCracked = true;
                     var longestTimeCracking = 0.0;
-                    for (int i = 0; i < robberList.Count(); i++)
+                    foreach (var robber in robberList)
                     {
-                        try
+                        if (longestTimeCracking < robber.totalTimeSpentCracking)
                         {
-                            if (robberList[i].totalTimeSpentCracking > longestTimeCracking)
-                            {
-                                longestTimeCracking = robberList[i].totalTimeSpentCracking;
-                            }
-                            
+                            longestTimeCracking = robber.totalTimeSpentCracking;
                         }
-                        catch (System.NullReferenceException)
-                        {
-                            break;
-                        }  
                     }
                     Console.WriteLine($"The robbers did {longestTimeCracking} seconds over cracking {vaultList.Count()} vault(s) with {robberList.Count()} robber(s).");
                 }       
